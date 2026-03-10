@@ -29,28 +29,28 @@ const config: QuartzConfig = {
       },
       colors: {
         lightMode: {
-          light: "#faf8f8",
-          lightgray: "#e5e5e5",
-          gray: "#b8b8b8",
-          darkgray: "#4e4e4e",
-          dark: "#2b2b2b",
-          secondary: "#284b63",
-          tertiary: "#84a59d",
-          highlight: "rgba(143, 159, 169, 0.15)",
-          textHighlight: "#fff23688",
+          light: "#f5f6f8",
+          lightgray: "#e0e0e0",
+          gray: "#a8a8a8",
+          darkgray: "#555",
+          dark: "#1e1e1e",
+          secondary: "#7c8cff",
+          tertiary: "#5fd4a1",
+          highlight: "rgba(120,120,120,0.12)",
+          textHighlight: "#ffe066"
         },
         darkMode: {
-          light: "#161618",
-          lightgray: "#393639",
-          gray: "#646464",
+          light: "#1e1e1e",
+          lightgray: "#2c2c2c",
+          gray: "#5c5c5c",
           darkgray: "#d4d4d4",
-          dark: "#ebebec",
-          secondary: "#7b97aa",
-          tertiary: "#84a59d",
-          highlight: "rgba(143, 159, 169, 0.15)",
-          textHighlight: "#b3aa0288",
-        },
-      },
+          dark: "#ffffff",
+          secondary: "#7c8cff",
+          tertiary: "#5fd4a1",
+          highlight: "rgba(255,255,255,0.06)",
+          textHighlight: "#ffd43b"
+        }
+      }
     },
   },
   plugins: {
