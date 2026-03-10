@@ -1,3 +1,19 @@
 @use "./base.scss";
 
 // put your custom CSS here!
+
+.sidebar {
+  padding-top: 6px;
+}
+
+.sidebar h1 {
+  margin-bottom: 4px;
+}
+
+.sidebar input[type="search"] {
+  max-width: 160px;
+}
+
+.page {
+  margin-top: 6px;
+}

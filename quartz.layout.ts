@@ -21,17 +21,14 @@ export const defaultContentPageLayout: PageLayout = {
     Component.ArticleTitle(),
   ],
   left: [
-    Component.PageTitle(),
     Component.Flex({
       components: [
-        {
-          Component: Component.Search(),
-          grow: true,
-        },
-        { Component: Component.Darkmode() },
-      ],
+        { Component: Component.PageTitle(), grow: true },
+        { Component: Component.Darkmode() }
+      ]
     }),
-    Component.Explorer({ folderDefaultState: "open" }),
+    Component.Search(),
+    Component.Explorer({ folderDefaultState: "open" })
   ],
   right: [
     Component.Graph(),
@@ -44,17 +41,14 @@ export const defaultContentPageLayout: PageLayout = {
 export const defaultListPageLayout: PageLayout = {
   beforeBody: [Component.ArticleTitle()],
   left: [
-    Component.PageTitle(),
     Component.Flex({
       components: [
-        {
-          Component: Component.Search(),
-          grow: true,
-        },
-        { Component: Component.Darkmode() },
-      ],
+        { Component: Component.PageTitle(), grow: true },
+        { Component: Component.Darkmode() }
+      ]
     }),
-    Component.Explorer({ folderDefaultState: "open" }),
+    Component.Search(),
+    Component.Explorer({ folderDefaultState: "open" })
   ],
   right: [],
 }
