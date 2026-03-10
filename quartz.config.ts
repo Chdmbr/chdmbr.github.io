@@ -8,7 +8,7 @@ import * as Plugin from "./quartz/plugins"
  */
 const config: QuartzConfig = {
   configuration: {
-    pageTitle: "Chidambar Knowledge Base",
+    pageTitle: "Chidambar",
     pageTitleSuffix: "",
     enableSPA: true,
     enablePopovers: true,
@@ -95,13 +95,3 @@ const config: QuartzConfig = {
 }
 
 export default config
-
-
-
-
-
-
-
-
-
-
