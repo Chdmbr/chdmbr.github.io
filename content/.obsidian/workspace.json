@@ -20,8 +20,23 @@
               "icon": "lucide-file",
               "title": "index"
             }
+          },
+          {
+            "id": "249129daab4e9a8e",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "test/hei.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "hei"
+            }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -190,10 +205,13 @@
       "bases:Create new base": false
     }
   },
-  "active": "5f2d2d8de83581ed",
+  "active": "249129daab4e9a8e",
   "lastOpenFiles": [
-    "aa/create a link.md",
+    "test.md.md",
+    "test/hei.md",
+    "test",
     "index.md",
+    "aa/create a link.md",
     "Diffusion.md",
     "cc/Welcome.md",
     "bb/linux.md",
