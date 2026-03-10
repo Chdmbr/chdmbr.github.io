@@ -16,7 +16,7 @@ const config: QuartzConfig = {
       provider: "plausible",
     },
     locale: "en-US",
-    baseUrl: "chdmbr.pages.dev",
+    baseUrl: "https://chdmbr.pages.dev",
     ignorePatterns: ["private", "templates", ".obsidian"],
     defaultDateType: "modified",
     theme: {
@@ -95,3 +95,5 @@ const config: QuartzConfig = {
 }
 
 export default config
+
+
