@@ -9,7 +9,7 @@
  */
 $breakpoints: (
   mobile: 800px,
-  desktop: 1200px,
+  desktop: 1024px,
 );
 
 $mobile: "(max-width: #{map.get($breakpoints, mobile)})";
@@ -17,8 +17,8 @@ $tablet: "(min-width: #{map.get($breakpoints, mobile)}) and (max-width: #{map.ge
 $desktop: "(min-width: #{map.get($breakpoints, desktop)})";
 
 $pageWidth: #{map.get($breakpoints, mobile)};
-$sidePanelWidth: 320px; //380px;
-$topSpacing: 6rem;
+$sidePanelWidth: 260px;
+$topSpacing: 1.5rem;
 $boldWeight: 700;
 $semiBoldWeight: 600;
 $normalWeight: 400;
@@ -56,3 +56,5 @@ $desktopGrid: (
       "grid-sidebar-left grid-center grid-sidebar-right"\
       "grid-sidebar-left grid-footer grid-sidebar-right"',
 );
+
+

@@ -1,56 +1,346 @@
 @use "./base.scss";
+@use "./variables.scss" as *;
 
-// put your custom CSS here!
-
-/* Compact layout similar to Obsidian */
-
-.page {
-  margin-top: 4px;
-}
-
-article {
-  margin-top: 4px;
-}
-
-.sidebar {
-  width: 220px;
-  padding-top: 6px;
-}
-
-.sidebar h1 {
-  font-size: 1.2rem;
-  margin-bottom: 6px;
-}
-
-.sidebar input[type="search"] {
-  max-width: 160px;
-  margin-bottom: 6px;
-}
-
-.explorer {
-  font-size: 0.9rem;
-}
-
-.explorer ul {
-  margin-top: 2px;
-}
-
-.graph {
-  margin-top: 8px;
-}
-
-h1 {
-  margin-top: 4px;
-}
-
-h2 {
-  margin-top: 10px;
+:root {
+  --obsidian-pane-bg: color-mix(in srgb, var(--light) 92%, #ffffff 8%);
+  --obsidian-divider: color-mix(in srgb, var(--lightgray) 85%, #c8c8c8 15%);
 }
 
 body {
-  line-height: 1.5;
+  background-color: var(--light);
 }
 
-.graph {
-  max-height: 320px;
+.page {
+  max-width: 100%;
+  margin: 0;
+}
+
+.page > #quartz-body {
+  min-height: 100vh;
+  column-gap: 0;
+  row-gap: 0;
+  grid-template-columns: #{$sidePanelWidth} minmax(0, 1fr) #{$sidePanelWidth};
+}
+
+.page > #quartz-body .sidebar {
+  box-sizing: border-box;
+  height: 100vh;
+  overflow-y: auto;
+  padding: 0.85rem 0.85rem 1.25rem;
+  gap: 0.75rem;
+  background-color: var(--obsidian-pane-bg);
+  scrollbar-width: thin;
+}
+
+.page > #quartz-body .sidebar.left {
+  border-right: 1px solid var(--obsidian-divider);
+}
+
+.page > #quartz-body .sidebar.right {
+  border-left: 1px solid var(--obsidian-divider);
+}
+
+.left .flex-component {
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.15rem 0.2rem 0.45rem;
+}
+
+.page-title {
+  margin: 0;
+  font-size: 1.95rem;
+  font-weight: 700;
+  line-height: 1.1;
+}
+
+.page-title a {
+  color: var(--secondary);
+}
+
+.left .darkmode {
+  width: 30px;
+  height: 30px;
+  border: 1px solid var(--obsidian-divider);
+  border-radius: 999px;
+  background: var(--light);
+}
+
+.left .darkmode svg {
+  left: 50%;
+  top: 50%;
+  width: 15px;
+  height: 15px;
+  transform: translate(-50%, -50%);
+}
+
+.left .search {
+  width: 100%;
+  max-width: none;
+}
+
+.left .search > .search-button {
+  height: 2rem;
+  border-radius: 8px;
+  padding: 0 0.6rem 0 0.35rem;
+  background-color: var(--light);
+  border-color: var(--obsidian-divider);
+}
+
+.left .search > .search-button > p {
+  font-size: 0.95rem;
+  color: var(--gray);
+}
+
+.left .search > .search-button svg {
+  width: 16px;
+  min-width: 16px;
+  margin: 0 0.4rem 0 0.3rem;
+}
+
+.left .explorer {
+  min-height: 0;
+  padding: 0 0.2rem;
+  font-size: 0.9rem;
+}
+
+.left button.desktop-explorer h2 {
+  font-size: 1rem;
+  font-weight: 700;
+  letter-spacing: 0.01em;
+}
+
+.left .explorer-content {
+  margin-top: 0.45rem;
+  padding-right: 0.25rem;
+}
+
+.left .explorer-content ul li {
+  margin: 0.14rem 0;
+}
+
+.left .folder-container div > a,
+.left .folder-container div > button span {
+  font-size: 0.95rem;
+  line-height: 1.4rem;
+}
+
+.left .explorer-content ul li > a {
+  display: inline-block;
+  font-size: 0.95rem;
+  line-height: 1.4rem;
+  padding: 0.05rem 0;
+}
+
+.left .explorer-content ul li > a.active {
+  opacity: 1;
+  color: var(--secondary);
+  font-weight: 600;
+}
+
+.page > #quartz-body .center,
+.page > #quartz-body footer {
+  min-width: 0;
+  max-width: 100%;
+}
+
+.center {
+  padding: 1.35rem clamp(1.1rem, 3vw, 2.75rem) 2.5rem;
+}
+
+.page > #quartz-body .page-header {
+  margin: 0 0 0.85rem;
+}
+
+article {
+  max-width: 100%;
+  font-size: 1.02rem;
+}
+
+article > h1:first-child {
+  margin-top: 0;
+  margin-bottom: 0.35rem;
+  font-size: 2.2rem;
+  font-weight: 700;
+  line-height: 1.15;
+}
+
+.content-meta {
+  margin: 0 0 0.85rem;
+  font-size: 1rem;
+  color: var(--gray);
+}
+
+.content-meta > * {
+  margin-right: 0.5rem !important;
+}
+
+.tags {
+  margin: 0 0 0.9rem;
+  gap: 0.35rem;
+}
+
+a.internal.tag-link {
+  border-radius: 6px;
+  padding: 0.07rem 0.35rem;
+  font-size: 0.95rem;
+}
+
+article h1 {
+  margin-top: 2.25rem;
+  padding-bottom: 0.3rem;
+  border-bottom: 1px solid var(--obsidian-divider);
+}
+
+article h2 {
+  margin-top: 2rem;
+  padding-bottom: 0.25rem;
+  border-bottom: 1px solid var(--obsidian-divider);
+}
+
+article h3 {
+  margin-top: 1.45rem;
+}
+
+article p,
+article li {
+  line-height: 1.6;
+}
+
+hr {
+  margin: 1.6rem 0 1.1rem;
+  background-color: var(--obsidian-divider);
+}
+
+.right .graph,
+.right .toc {
+  flex: 0 0 auto;
+  padding: 0.15rem 0.05rem;
+}
+
+.right .graph > h3 {
+  display: none;
+}
+
+.right .graph > .graph-outer {
+  margin: 0;
+  height: 245px;
+  border-radius: 10px;
+  border: 1px solid var(--obsidian-divider);
+  background-color: var(--light);
+}
+
+.right .graph > .graph-outer > .global-graph-icon {
+  margin: 0.35rem;
+  opacity: 0.55;
+}
+
+.right .toc {
+  margin-top: 1rem;
+}
+
+.right .toc .toc-header {
+  display: none;
+}
+
+.right ul.toc-content.overflow,
+.right ul.toc-content.overflow.collapsed {
+  margin: 0;
+  padding: 0;
+  max-height: calc(100vh - 20rem);
+  display: block;
+}
+
+.right ul.toc-content.overflow > li {
+  margin: 0;
+  padding: 0.18rem 0;
+}
+
+.right ul.toc-content.overflow > li > a {
+  display: block;
+  font-size: 0.97rem;
+  line-height: 1.36;
+  opacity: 0.58;
+  color: var(--darkgray);
+  padding-left: 0.56rem;
+  border-left: 2px solid transparent;
+  transition:
+    opacity 0.15s ease,
+    color 0.15s ease,
+    border-color 0.15s ease;
+}
+
+.right ul.toc-content.overflow > li > a.in-view {
+  color: var(--dark);
+  opacity: 0.82;
+}
+
+.right ul.toc-content.overflow > li > a.active-section {
+  color: var(--dark);
+  opacity: 1;
+  font-weight: 600;
+  border-left-color: var(--secondary);
+}
+
+.right ul.toc-content.overflow .depth-2,
+.right ul.toc-content.overflow .depth-3,
+.right ul.toc-content.overflow .depth-4,
+.right ul.toc-content.overflow .depth-5,
+.right ul.toc-content.overflow .depth-6 {
+  border-left: 1px solid var(--obsidian-divider);
+}
+
+.page-footer {
+  margin-top: 1rem;
+}
+
+footer {
+  margin: 0;
+  padding: 0 1rem 1rem;
+  font-size: 0.86rem;
+  opacity: 0.55;
+}
+
+footer ul {
+  gap: 0.6rem;
+  margin-top: 0;
+}
+
+@media all and ($tablet) {
+  .page > #quartz-body {
+    grid-template-columns: #{$sidePanelWidth} minmax(0, 1fr);
+  }
+
+  .page > #quartz-body .sidebar.right {
+    position: sticky;
+    top: 0;
+    height: 100vh;
+    width: auto;
+    flex-direction: column;
+    padding: 0.85rem;
+  }
+
+  .page > #quartz-body .sidebar.right > .toc {
+    display: flex;
+  }
+}
+
+@media all and ($mobile) {
+  .page > #quartz-body .sidebar {
+    height: auto;
+    max-height: none;
+  }
+
+  .page > #quartz-body .sidebar.left,
+  .page > #quartz-body .sidebar.right {
+    border: 0;
+    border-bottom: 1px solid var(--obsidian-divider);
+  }
+
+  .center {
+    padding: 1rem 0.35rem 1.75rem;
+  }
+
+  .right .toc {
+    margin-top: 0.55rem;
+  }
 }
